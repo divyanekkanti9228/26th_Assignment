@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM ASSIGNMENT QN-1</title>
+  <style type="text/css">
+    body{
+      margin-top: 100px;
+    }
+    li{
+      list-style-type: none;
+    }
+  </style>  
+  </head>
+  <body>
+    <center>
+    <p id="para" onmouseover="paragraphChange()" onmouseout="paragraphRestore()" style="padding: 5px;">Assignment need to be submitted.</p>
+    
+    <button id="btn" onmouseover="buttonChange()" onmouseout="buttonOriginal()">Submit</button>
+    
+    <input type="text" id="textbox">
+    <button onclick="assignValue()">Assign Paragraph Value</button>
+    
+    <ul>
+      <li onmouseover="listChange(this)" onmouseout="listRestore(this)">Aditya</li>
+      <li onmouseover="listChange(this)" onmouseout="listRestore(this)">College</li>
+      <li onmouseover="listChange(this)" onmouseout="listRestore(this)">Of</li>
+      <li onmouseover="listChange(this)" onmouseout="listRestore(this)">Engineering</li>
+      <li onmouseover="listChange(this)" onmouseout="listRestore(this)">And</li>
+      <li onmouseover="listChange(this)" onmouseout="listRestore(this)">Technology</li>
+
+    </ul>
+    </center>
+    
+    <script type="text/javascript">
+      function paragraphChange() {
+        var paragraph = document.getElementById("para");
+        paragraph.style.color = "red";
+      }
+      
+      function paragraphRestore() {
+        var paragraph = document.getElementById("para");
+        paragraph.style.color = "black";
+      }
+      
+      function buttonChange() {
+        var button = document.getElementById("btn");
+        button.innerHTML = "Clicked";
+      }
+      
+      function buttonOriginal() {
+        var button = document.getElementById("btn");
+        button.innerHTML = "Original ";
+      }
+      
+      function assignValue() {
+        var paragraph = document.getElementById("para");
+        var textbox = document.getElementById("textbox");
+        textbox.value = paragraph.innerHTML;
+      }
+      
+      function listChange(item) {
+        item.style.color = "red";
+        item.style.fontWeight = "bold";
+      }
+      
+      function listRestore(item) {
+        item.style.color = "";
+        item.style.fontWeight = "";
+      }
+    </script>
+  </body>
+</html>
